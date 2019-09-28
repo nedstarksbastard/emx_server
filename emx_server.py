@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, Response
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-    return "Hello, Fizi!"
+    return Response("Hello Fizi", status=200, mimetype='text/plain')
 
 
 if __name__ == "__main__":
