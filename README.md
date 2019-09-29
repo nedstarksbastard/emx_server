@@ -6,7 +6,7 @@
 * Github for version control
 * Heroku for web-hosting (auto build integration with github repo)
 * Flask, gunicorn for web-service
-#### Setup
+### Setup
 * clone repository
 * pip install requirements
 * run emx_server.py
