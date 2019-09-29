@@ -40,7 +40,8 @@ and then fill in the missing values in the codec.
 * No two characters in the character set can be equal to each other
 
 ##### Algorithm
-Each character in the set can be thought of as a node. For each character we are provided a clue:
+Each character in the set can be thought of as a node. For each character we are provided a codec string containing
+the clue to solve the puzzle. Based on the index of the logical operator in the codec string:
 * Either the character is equal to itself. Or,
 * It is greater or less than another character in the set
 
