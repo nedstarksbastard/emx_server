@@ -1,8 +1,8 @@
-# emx_server
+# EMX Server
 
-#### Tech Stack
-* Python 3.7.4, 3.6.9
-#### Services
+### Tech Stack
+* Python 3.7.4 (local), 3.6.9 (hosted)
+### Services
 * Github for version control
 * Heroku for web-hosting (auto build integration with github repo)
 * Flask, gunicorn for web-service
@@ -11,19 +11,23 @@
 * pip install requirements
 * run emx_server.py
 
-####Thoughts
-##### Starting local web server
+### Rundown
+#### Starting local web server
 There are many options that provide rapid prototyping capabilities. The ones I was familiar with being Node.js,
 Flask and Django. I ruled out Django since all I needed was a simple web-server and not a full-stack web framework.
 Node is extremely easy to set up for simple web service and is also very performant. But considering the fact that
 I was not writing client side code and I am much more proficient in python than javascript, I went with Flask. 
-##### Hosting on the web
+#### Hosting on the web
 Now I had the flask service running locally on a windows machine and the code was histed in a git repository. 
 For deploying it online I chose Heroku which is a cloud platform as a service. There are other alternatives but 
 this was fairly easy to understand and set up with continuous build integration with my git repo. So I could push
 code to my repo and the changes would  be reflected on the hosted service seamlessly
 
-#### The Puzzle!
+#### All requests save puzzle
+Build a map that contains the request argument as key and the answer string to be sent back as value. Parse the request
+argument (`q` in this case) and send back the associated value in the map
+
+#### The Puzzle!!!
 This was the most complex part of the project. The GET request was a string containing the character set followed 
 by the codec to be filled in for each of the character in the set separated by newline. The codec is a clue 
 to the sort order of the characters in the set and based on the clues we need to first figure out the correct ordering
@@ -67,7 +71,9 @@ perform modifications on a list and then convert it into a string when we are do
     is greater than the previous item)
     * Insert `=` at the index of `A` (current node)
 * Now the list becomes `[A,=,<,>,<]`. We convert this into a string and store it. 
-* We process all the elements in the array till its empty and construct the final resultant string to be sent back
+* We process all the elements in the array till its empty and construct the final resultant string to be sent back.
+
+
 
     
    
