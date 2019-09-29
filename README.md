@@ -6,7 +6,7 @@
 * Github for version control
 * Heroku for web-hosting (auto build integration with github repo)
 * Flask, gunicorn for web-service
-####Setup
+#### Setup
 * clone repository
 * pip install requirements
 * run emx_server.py
@@ -33,13 +33,13 @@ by the codec to be filled in for each of the character in the set separated by n
 to the sort order of the characters in the set and based on the clues we need to first figure out the correct ordering
 and then fill in the missing values in the codec.
 
-#####Assumptions
+##### Assumptions
 * There can be any number of characters in the set but the number should equal the codec provided i.e. each 
   character should have an associated codec. My code validates this assumption
 * Each character in the set is distinct
 * No two characters in the character set can be equal to each other
 
-#####Algorithm
+##### Algorithm
 Each character in the set can be thought of as a node. For each character we are provided a clue:
 * Either the character is equal to itself. Or,
 * It is greater or less than another character in the set
