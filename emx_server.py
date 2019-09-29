@@ -21,11 +21,13 @@ def home():
         "Email Address": "fizi@outlook.com"
     }
 
-    question = request.args.get("q").title()
-    if question == "Puzzle":
+    question = request.args.get("q")
+    if not question or question not in answer:
+        return Response("malformed request", status=400, mimetype='text/plain')
+    elif question.title() == "Puzzle":
         return Response(solve_puzzle(request.args.get("d")), status=200, mimetype='text/plain')
     else:
-        return Response(answer[question], status=200, mimetype='text/plain')
+        return Response(answer[question.title()], status=200, mimetype='text/plain')
 
 
 if __name__ == "__main__":
