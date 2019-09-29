@@ -1,4 +1,5 @@
 from flask import Flask, Response, request
+from utils.puzzle_handler import solve_puzzle
 
 app = Flask(__name__)
 
@@ -12,10 +13,10 @@ def home():
         "Degree": "Master of Science",
         "Position": "Data Pipeline Engineer",
         "Name": "Fizi Yadav",
-        "Puzzle": "NA",
+        "Puzzle": solve_puzzle(request.args.get("d")),
         "Referrer": "LinkedIn",
         "Source": "https://github.com/nedstarksbastard/emx_server/blob/master/emx_server.py",
-        "Resume": "NA",
+        "Resume": "http://www.undg.net/resume",
         "Status": "Yes (H1B)",
         "Years": "10+",
         "Email Address": "fizi@outlook.com"
