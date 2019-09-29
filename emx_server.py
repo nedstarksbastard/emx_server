@@ -13,7 +13,6 @@ def home():
         "Degree": "Master of Science",
         "Position": "Data Pipeline Engineer",
         "Name": "Fizi Yadav",
-        "Puzzle": solve_puzzle(request.args.get("d")),
         "Referrer": "LinkedIn",
         "Source": "https://github.com/nedstarksbastard/emx_server/blob/master/emx_server.py",
         "Resume": "http://www.undg.net/resume",
@@ -23,7 +22,10 @@ def home():
     }
 
     question = request.args.get("q").title()
-    return Response(answer[question], status=200, mimetype='text/plain')
+    if question == "Puzzle":
+        return Response(solve_puzzle(request.args.get("d")), status=200, mimetype='text/plain')
+    else:
+        return Response(answer[question], status=200, mimetype='text/plain')
 
 
 if __name__ == "__main__":
