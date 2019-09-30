@@ -63,20 +63,35 @@ string will be `<` for all other nodes.
 * Let's say the first character in the topologically sorted array is `C` (lowest).  
     * Insert character `C` at index 0 and
     * Insert `=` at index of `C` (current node). 
-* Now the list becomes `[C,<,<,=,<]`. We join the list into a string and insert it into the main list that will in turn be converted into a list before 
-being sent back to client ( This is done because strings are immutable in Python and as such it is less expensive to 
-perform modifications on a list and then convert it into a string when we are done)
+    
+Now the list becomes `[C,<,<,=,<]`. We join the list into a string and insert it into the main list that will in turn 
+be converted into a list before being sent back to client ( This is done because strings are immutable in Python and 
+as such it is less expensive to perform modifications on a list and then convert it into a string when we are done)
 * The next node in the array will be greater than the current one. Lets say the character is `A` (next lowest).
     * Insert `A` at the beginning of the list, index 0.
     * Insert `>` at index with value `=` (index of the last popped item in the sorted array since the new item 
     is greater than the previous item)
     * Insert `=` at the index of `A` (current node)
-* Now the list becomes `[A,=,<,>,<]`. We convert this into a string and store it. 
-* We process all the elements in the array till its empty and construct the final resultant string to be sent back.
+
+Now the list becomes `[A,=,<,>,<]`. We convert this into a string and store it.  We process all the elements in
+the array till its empty and construct the final resultant string to be sent back.
+
+### Error Handling
+
+* Service returns a `malformed request` with `status 400` for request that are out of scope and/or 
+do not have the right arguments. This can be further enhanced to provide more relevant responses. 
+* Basic validation on the puzzle string (see assumptions), it will return an `malformed puzzle string` with
+ `status 400` if the assumptions are not met or if the string is invalid
 
 
-
-    
-   
+### Enhancements    
+* Unit and Integration Testing - due to the limited scope of the service I have skipped this.
+* Performance - Most of the code is `O(n)` except DFS (`O(v+e`). I have done string manipulation in-place by using the 
+same instance of list and joining all the elements to form a string. Still, there may be other algorithms that do
+not require graph and will save up on space complexity
+* Better Error Response - I have a blanketed error handling that returns the same response for thing that fall outside of the set
+number of requests. The response to these errors can be more fine-tuned
+* Edge Cases - there might be edge cases for which the service fails. This dovetails with the point of having 
+better testing and data validation before a release
         
     

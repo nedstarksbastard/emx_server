@@ -25,7 +25,8 @@ def home():
     if not question:
         return Response("malformed request", status=400, mimetype='text/plain')
     elif question.title() == "Puzzle":
-        return Response(solve_puzzle(request.args.get("d")), status=200, mimetype='text/plain')
+        resp = solve_puzzle(request.args.get("d"))
+        return Response(resp if resp else "Malformed puzzle string", status=200 if resp else 400, mimetype='text/plain')
     elif question not in answer:
         return Response("malformed request", status=400, mimetype='text/plain')
     else:
