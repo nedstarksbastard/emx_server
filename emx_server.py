@@ -10,11 +10,11 @@ def home():
     answers = {
         "Ping": "OK",
         "Phone": "6463543951",
-        "Degree": "Master of Science",
+        "Degree": "Master of Science(Comp Sc-Stat), Master of Science(Comp Graphics), Bachelor of Science(Comp Eng)",
         "Position": "Data Pipeline Engineer",
         "Name": "Fizi Yadav",
         "Referrer": "LinkedIn",
-        "Source": "https://github.com/nedstarksbastard/emx_server/blob/master/emx_server.py",
+        "Source": "https://github.com/nedstarksbastard/emx_server",
         "Resume": "http://www.undg.net/resume",
         "Status": "Yes (H1B)",
         "Years": "10+",
