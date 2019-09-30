@@ -35,9 +35,9 @@ and then fill in the missing values in the codec.
 
 ##### Assumptions
 * There can be any number of characters in the set but the number should equal the codec provided i.e. each 
-  character should have an associated codec. My code validates this assumption
-* Each character in the set is distinct
-* No two characters in the character set can be equal to each other
+  character should have an associated codec.
+* Each character in the set is distinct.
+* No two characters in the character set can be equal to each other.
 
 ##### Algorithm
 Each character in the set can be thought of as a node. For each character we are provided a codec string containing
