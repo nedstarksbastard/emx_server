@@ -49,9 +49,9 @@ the clue to solve the puzzle. Based on the index of the logical operator in the 
 We ignore the equality since that is an automatic assumption. For the second case
 * Split and strip the string to get the characters and their associated codec  
 * Add each character in the set as nodes in a graph
-* Process the codec and create an edge between the nodes, the direction of which is from the lesser of the two
- nodes to the greater.As an example, for our puzzle we will have 4 nodes `A,B,C,D` and a codec like `A-->-` will 
- result in an edge going from `C -> A` denoting the fact that A is greater than C.  
+* Process the codec and create an edge between the nodes, the direction of which is from the greater of the two
+ nodes to the lesser.As an example, for our puzzle we will have 4 nodes `A,B,C,D` and a codec like `A-->-` will 
+ result in an edge going from `A to C` denoting the fact that A is greater than C.  
 * After processing each node and edge we get a Directed Acyclic Graph which is then be topologically sorted to get
  the right order.
 
