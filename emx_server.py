@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    answer = {
+    answers = {
         "Ping": "OK",
         "Phone": "6463543951",
         "Degree": "Master of Science",
@@ -27,10 +27,10 @@ def home():
     elif question.title() == "Puzzle":
         resp = solve_puzzle(request.args.get("d"))
         return Response(resp if resp else "Malformed puzzle string", status=200 if resp else 400, mimetype='text/plain')
-    elif question not in answer:
+    elif question not in answers:
         return Response("malformed request", status=400, mimetype='text/plain')
     else:
-        return Response(answer[question.title()], status=200, mimetype='text/plain')
+        return Response(answers[question.title()], status=200, mimetype='text/plain')
 
 
 if __name__ == "__main__":
