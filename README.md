@@ -50,7 +50,7 @@ We ignore the equality since that is an automatic assumption. For the second cas
 * Split and strip the string to get the characters and their associated codec  
 * Add each character in the set as nodes in a graph
 * Process the codec and create an edge between the nodes, the direction of which is from the greater of the two
- nodes to the lesser.As an example, for our puzzle we will have 4 nodes `A,B,C,D` and a codec like `A-->-` will 
+ nodes to the lesser. As an example, for our puzzle we will have 4 nodes `A,B,C,D` and a codec like `A-->-` will 
  result in an edge going from `A to C` denoting the fact that A is greater than C.  
 * After processing each node and edge we get a Directed Acyclic Graph which is then be topologically sorted to get
  the right order.
